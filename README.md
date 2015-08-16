@@ -24,6 +24,13 @@ docker run -it --rm lukin0110/libsodium
 docker build -t lukin0110/libsodium .
 ```
 
+## Copy build artifacts to host
+```
+id=$(docker create lukin0110/libsodium)
+docker cp $id:path output
+docker rm -v $id
+```
+
 License
 =======
 
